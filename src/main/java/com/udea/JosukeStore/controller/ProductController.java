@@ -14,11 +14,13 @@ import java.net.URI;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/products")
+@CrossOrigin("*")
 public class ProductController {
 
     private ProductService productService;
@@ -36,7 +38,7 @@ public class ProductController {
         return ResponseEntity.created(uri).body(productData);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<ProductData> getProductById(@PathVariable Long id) {
         ProductData productData = this.productService.getProductById(id);
         return ResponseEntity.ok().body(productData);
