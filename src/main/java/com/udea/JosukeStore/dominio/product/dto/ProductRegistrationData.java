@@ -1,10 +1,13 @@
 package com.udea.JosukeStore.dominio.product.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public record ProductRegistrationData(
-        String productCode,
-        String productName,
-        String productDescription,
-        Float price,
-        Boolean isAvailable,
-        String base64Image) {
+                @NotBlank String productCode,
+                @NotBlank String productName,
+                @NotBlank String productDescription,
+                @NotNull Long price,
+                @NotNull Boolean isAvailable,
+                @NotBlank String urlProductImage) {
 }
