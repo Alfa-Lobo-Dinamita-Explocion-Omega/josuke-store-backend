@@ -10,6 +10,7 @@ import com.udea.JosukeStore.dominio.product.interfaces.ProductService;
 import jakarta.validation.Valid;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
@@ -50,5 +53,11 @@ public class ProductController {
     public ResponseEntity<ProductData> updateProduct(@RequestBody @Valid ProductUpdateData productUpdateData) {
         return ResponseEntity.ok(this.productService.updateProduct(productUpdateData));
     }
+
+    @GetMapping()
+    public ResponseEntity<List<ProductData>> getProducts() {
+        return ResponseEntity.ok().body(this.productService.getProducts());
+    }
+    
 
 }
