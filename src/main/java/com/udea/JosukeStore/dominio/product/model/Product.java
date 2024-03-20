@@ -19,7 +19,7 @@ public class Product {
     private Long id;
 
     @Column(unique = true, nullable = false, name = "product_code")
-    private String producCode;
+    private String productCode;
 
     @Column(unique = true, nullable = false, name = "product_name")
     private String productName;
@@ -38,7 +38,7 @@ public class Product {
 
 
     public Product(String code, String name, String description, Long price, Boolean isAvailable, String urlProductImage) {
-        this.producCode = code;
+        this.productCode = code;
         this.productName = name;
         this.productDescription = description;
         this.price = price;

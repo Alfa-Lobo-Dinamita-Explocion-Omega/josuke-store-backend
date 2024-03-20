@@ -8,4 +8,12 @@ import com.udea.JosukeStore.dominio.product.model.Product;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
+    boolean existsByProductCode(String productCode);
+
+    boolean existsByProductName(String productName);
+
+    Product findByProductName(String productName);
+
+    Product findByProductCode(String productCode);
+
 }

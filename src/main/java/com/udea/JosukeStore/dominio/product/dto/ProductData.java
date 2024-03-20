@@ -15,7 +15,7 @@ public record ProductData(
     public ProductData(Product product) {
         this(
                 product.getId(),
-                product.getProducCode(),
+                product.getProductCode(),
                 product.getProductName(),
                 product.getProductDescription(),
                 product.getPrice(),
