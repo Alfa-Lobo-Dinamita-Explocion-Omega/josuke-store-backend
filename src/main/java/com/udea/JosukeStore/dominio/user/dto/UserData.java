@@ -10,6 +10,8 @@ public record UserData(
         int idUser,
         String address,
         String city,
+        String department,
+        String country,
         String potalCode,
         Role role) {
     public UserData(User user){
@@ -20,6 +22,8 @@ public record UserData(
                 user.getIdUser(),
                 user.getAddress(),
                 user.getCity(),
+                user.getDepartment(),
+                user.getCountry(),
                 user.getPotalCode(),
                 user.getRole());
     }

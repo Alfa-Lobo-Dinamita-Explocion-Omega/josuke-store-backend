@@ -9,6 +9,8 @@ public record UserResgistrationData(
         int idUser,
         String address,
         String city,
+        String department,
+        String country,
         String postalCode,
         String userName,
         String password,

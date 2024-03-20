@@ -40,6 +40,12 @@ public class User implements UserDetails {
     @Column
     private String city;
 
+    @Column
+    private String department;
+
+    @Column
+    private String country;
+
     @Column(name = "postal_code")
     private String potalCode;
 
@@ -52,13 +58,15 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public User(String name, String email, String phone, int idUser, String address, String city, String potalCode, String userName, String password, Role role) {
+    public User(String name, String email, String phone, int idUser, String address, String city,String department,String country, String potalCode, String userName, String password, Role role) {
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.idUser = idUser;
         this.address = address;
         this.city = city;
+        this.department = department;
+        this.country = country;
         this.potalCode = potalCode;
         this.userName = userName;
         this.password = password;
@@ -74,6 +82,8 @@ public class User implements UserDetails {
                 userResgistrationData.idUser(),
                 userResgistrationData.address(),
                 userResgistrationData.city(),
+                userResgistrationData.department(),
+                userResgistrationData.country(),
                 userResgistrationData.postalCode(),
                 userResgistrationData.userName(),
                 encodedPassword,
