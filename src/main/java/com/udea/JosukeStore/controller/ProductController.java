@@ -21,8 +21,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
 @RestController
 @RequestMapping("/products")
 @CrossOrigin("*")
@@ -58,6 +56,11 @@ public class ProductController {
     public ResponseEntity<List<ProductData>> getProducts() {
         return ResponseEntity.ok().body(this.productService.getProducts());
     }
+
     
+    @GetMapping("/")
+    public ResponseEntity<List<ProductData>> getProductsByTerm(@RequestParam("term") String term) {
+        return ResponseEntity.ok().body(this.productService.getProductsByTerm(term));
+    }
 
 }

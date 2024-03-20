@@ -101,4 +101,11 @@ public class ProductServiceImpl implements ProductService {
       return this.productRepository.findAll().stream().map(ProductData::new).toList();
     }
 
+    
+    @Override
+    public List<ProductData> getProductsByTerm(String term) {
+        return this.productRepository.searchProductsByTerm(term).stream().map(ProductData::new).toList();
+    }
+
+
 }

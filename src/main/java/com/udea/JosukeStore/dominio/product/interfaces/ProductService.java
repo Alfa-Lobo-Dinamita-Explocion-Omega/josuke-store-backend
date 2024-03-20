@@ -16,5 +16,7 @@ public interface ProductService {
 
     List<ProductData> getProducts();
 
+    List<ProductData> getProductsByTerm(String term);
+
 
 }
