@@ -32,7 +32,7 @@ public class User implements UserDetails {
     private String phone;
 
     @Column(nullable = false, name = "id_user")
-    private int idUser;
+    private Integer idUser;
 
     @Column
     private String address;
