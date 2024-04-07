@@ -1,6 +1,7 @@
 package com.udea.JosukeStore.dominio.user.model;
 
 
+import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
 import com.udea.JosukeStore.dominio.user.dto.UserResgistrationData;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -87,7 +88,24 @@ public class User implements UserDetails {
                 userResgistrationData.postalCode(),
                 userResgistrationData.userName(),
                 encodedPassword,
-                userResgistrationData.role());
+                Role.CLIENT);
+    }
+
+    public static User createEmploye(EmployeRegistrationData employeRegistrationData, PasswordEncoder passwordEncoder) {
+        String encodedPassword = passwordEncoder.encode(employeRegistrationData.password());
+        return new User(
+                employeRegistrationData.name(),
+                employeRegistrationData.email(),
+                employeRegistrationData.phone(),
+                employeRegistrationData.idUser(),
+                employeRegistrationData.address(),
+                employeRegistrationData.city(),
+                employeRegistrationData.department(),
+                employeRegistrationData.country(),
+                employeRegistrationData.postalCode(),
+                employeRegistrationData.userName(),
+                encodedPassword,
+                employeRegistrationData.role());
     }
 
 

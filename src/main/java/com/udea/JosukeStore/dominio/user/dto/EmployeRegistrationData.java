@@ -2,7 +2,7 @@ package com.udea.JosukeStore.dominio.user.dto;
 
 import com.udea.JosukeStore.dominio.user.model.Role;
 
-public record UserResgistrationData(
+public record EmployeRegistrationData(
         String name,
         String email,
         String phone,
@@ -13,7 +13,8 @@ public record UserResgistrationData(
         String country,
         String postalCode,
         String userName,
-        String password
+        String password,
+        Role role
+){
 
-) {
 }

@@ -1,5 +1,6 @@
 package com.udea.JosukeStore.dominio.user;
 
+import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
 import com.udea.JosukeStore.dominio.user.dto.UserData;
 import com.udea.JosukeStore.dominio.user.dto.UserResgistrationData;
 import com.udea.JosukeStore.dominio.user.interfaces.UserService;
@@ -45,5 +46,24 @@ public class UserSeviceimpl implements UserService {
         user = this.userRepository.save(user);
         return new UserData(user);
     }
+
+    @Override
+    public UserData registerEmploye(EmployeRegistrationData employeRegistrationData) {
+        List<CustomValidationException> exceptions = new ArrayList<>();
+        validators.forEach(v -> {
+            try {
+                //v.validate(employeRegistrationData);
+            } catch (CustomValidationException e) {
+                exceptions.add(e);
+            }
+        });
+        if (!exceptions.isEmpty()) {
+            throw new DataIntegrityValidationException(exceptions);
+        }
+        User employe = User.createEmploye(employeRegistrationData, passwordEncoder);
+        employe = this.userRepository.save(employe);
+        return new UserData(employe);
+    }
+
 
 }
