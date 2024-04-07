@@ -15,6 +15,10 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import static com.udea.JosukeStore.dominio.user.model.Permission.*;
+import static com.udea.JosukeStore.dominio.user.model.Role.*;
+import static org.springframework.http.HttpMethod.*;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
@@ -27,7 +31,11 @@ public class SecurityConfiguration {
         return httpSecurity.csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(sessionAuthenticationStrategy -> sessionAuthenticationStrategy.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(rQ -> {
-                    rQ.requestMatchers("/products/**").permitAll();
+                    rQ.requestMatchers("/products/**").hasAnyRole(ADMIN.name(), EMPLOYE.name());
+                    rQ.requestMatchers(GET,"/products/**").hasAnyAuthority(ADMIN_READ.name(), EMPLOYE_READ.name());
+                    rQ.requestMatchers(POST,"/products/**").hasAnyAuthority(ADMIN_CREATE.name(), EMPLOYE_CREATE.name());
+                    rQ.requestMatchers(PUT,"/products/**").hasAnyAuthority(ADMIN_UPDATE.name(), EMPLOYE_UPDATE.name());
+                    rQ.requestMatchers(DELETE,"/products/**").hasAnyAuthority(ADMIN_DELETE.name());
                     rQ.requestMatchers("/users/**").permitAll();
                     rQ.requestMatchers("/auth/**").permitAll();
                     rQ.anyRequest().authenticated();
