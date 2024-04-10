@@ -54,7 +54,7 @@ public class ProductController {
         return ResponseEntity.ok(this.productService.updateProduct(productUpdateData));
     }
 
-    @GetMapping("/products")
+    @GetMapping("/products/list")
     public ResponseEntity<List<ProductData>> getProducts() {
         return ResponseEntity.ok().body(this.productService.getProducts());
     }
