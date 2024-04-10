@@ -3,6 +3,7 @@ package com.udea.JosukeStore.dominio.user.validations;
 import org.springframework.stereotype.Component;
 
 import com.udea.JosukeStore.dominio.user.UserRepository;
+import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
 import com.udea.JosukeStore.dominio.user.dto.UserResgistrationData;
 import com.udea.JosukeStore.infra.exceptions.CustomValidationException;
 
@@ -17,10 +18,20 @@ public class UserEmailValidation implements UserValidator {
 
     @Override
     public void validate(UserResgistrationData user) {
-        if (this.userRepository.existsByEmail(user.email())){
+        validateEmail(user.email());
+    }
+
+    @Override
+    public void validate(EmployeRegistrationData employe) {
+        validateEmail(employe.email());
+    }
+
+    private void validateEmail(String email) {
+        if (this.userRepository.existsByEmail(email)){
             throw new CustomValidationException("email",
-                    "The email (" + user.email() + ") is already in use.");
+                    "The email (" + email + ") is already in use.");
         }
     }
 }
+
 

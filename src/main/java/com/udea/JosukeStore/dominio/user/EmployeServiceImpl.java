@@ -34,7 +34,7 @@ public class EmployeServiceImpl implements EmployeService {
         List<CustomValidationException> exceptions = new ArrayList<>();
         validators.forEach(v -> {
             try {
-                //v.validate(employeRegistrationData);
+                v.validate(employeRegistrationData);
             } catch (CustomValidationException e) {
                 exceptions.add(e);
             }

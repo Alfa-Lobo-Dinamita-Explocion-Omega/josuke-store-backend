@@ -3,6 +3,7 @@ package com.udea.JosukeStore.dominio.user.validations;
 import org.springframework.stereotype.Component;
 
 import com.udea.JosukeStore.dominio.user.UserRepository;
+import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
 import com.udea.JosukeStore.dominio.user.dto.UserResgistrationData;
 import com.udea.JosukeStore.infra.exceptions.CustomValidationException;
 
@@ -17,9 +18,19 @@ public class UserIdUserValidation implements UserValidator {
 
     @Override
     public void validate(UserResgistrationData user) {
-        if (this.userRepository.existsByIdUser(user.idUser())) {
+        validateIdUser(user.idUser());
+    }
+
+    @Override
+    public void validate(EmployeRegistrationData employe) {
+        validateIdUser(employe.idUser());
+    }
+
+    private void validateIdUser(Integer idUser) {
+        if (this.userRepository.existsByIdUser(idUser)) {
             throw new CustomValidationException("idUser",
-                    "The ID user (" + user.idUser() + ") is already in use.");
+                    "The ID user (" + idUser + ") is already in use.");
         }
     }
 }
+
