@@ -39,6 +39,7 @@ public class SecurityConfiguration {
                     rQ.requestMatchers(DELETE,"/products/**").hasAnyAuthority(ADMIN_DELETE.name());
                     rQ.requestMatchers("/users/**").permitAll();
                     rQ.requestMatchers("/auth/**").permitAll();
+                    rQ.requestMatchers("/employe/**").permitAll();
                     rQ.anyRequest().authenticated();
                 })
                 .cors(Customizer.withDefaults())
