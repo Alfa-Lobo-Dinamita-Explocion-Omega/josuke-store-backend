@@ -33,6 +33,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(rQ -> {
                     rQ.requestMatchers("/products/**").hasAnyRole(ADMIN.name(), EMPLOYE.name());
                     rQ.requestMatchers(GET,"/products/**").hasAnyAuthority(ADMIN_READ.name(), EMPLOYE_READ.name());
+                    rQ.requestMatchers(GET, "/customer/products/**").permitAll();
                     rQ.requestMatchers(POST,"/products/**").hasAnyAuthority(ADMIN_CREATE.name(), EMPLOYE_CREATE.name());
                     rQ.requestMatchers(PUT,"/products/**").hasAnyAuthority(ADMIN_UPDATE.name(), EMPLOYE_UPDATE.name());
                     rQ.requestMatchers(DELETE,"/products/**").hasAnyAuthority(ADMIN_DELETE.name());

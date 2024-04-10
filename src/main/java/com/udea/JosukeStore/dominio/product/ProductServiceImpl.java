@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -106,6 +108,13 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductData> getProductsByTerm(String term) {
         return this.productRepository.searchProductsByTerm(term).stream().map(ProductData::new).toList();
     }
+
+    @Override
+    public Page<ProductData> getAvailableProducts(Pageable pagination) {
+        return this.productRepository.findByIsAvailableTrue(pagination);    
+    }
+
+
 
 
 }

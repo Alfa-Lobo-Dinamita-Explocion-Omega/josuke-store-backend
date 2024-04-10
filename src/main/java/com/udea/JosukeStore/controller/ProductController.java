@@ -12,6 +12,9 @@ import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +25,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-@RequestMapping("/products")
 @CrossOrigin("*")
 public class ProductController {
 
@@ -32,7 +34,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @PostMapping
+    @PostMapping("/products")
     public ResponseEntity<ProductData> registerProduct(
             @RequestBody @Valid ProductRegistrationData productRegistrationData,
             UriComponentsBuilder uriComponentsBuilder) {
@@ -41,26 +43,31 @@ public class ProductController {
         return ResponseEntity.created(uri).body(productData);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/products/{id}")
     public ResponseEntity<ProductData> getProductById(@PathVariable Long id) {
         ProductData productData = this.productService.getProductById(id);
         return ResponseEntity.ok().body(productData);
     }
 
-    @PutMapping
+    @PutMapping("/products")
     public ResponseEntity<ProductData> updateProduct(@RequestBody @Valid ProductUpdateData productUpdateData) {
         return ResponseEntity.ok(this.productService.updateProduct(productUpdateData));
     }
 
-    @GetMapping()
+    @GetMapping("/products")
     public ResponseEntity<List<ProductData>> getProducts() {
         return ResponseEntity.ok().body(this.productService.getProducts());
     }
 
     
-    @GetMapping("/")
+    @GetMapping("/products/")
     public ResponseEntity<List<ProductData>> getProductsByTerm(@RequestParam("term") String term) {
         return ResponseEntity.ok().body(this.productService.getProductsByTerm(term));
+    }
+
+    @GetMapping("/customer/products")
+    public ResponseEntity<Page<ProductData>> getAvailableProducts(@PageableDefault(size = 8) Pageable pagination) {
+        return ResponseEntity.ok().body(this.productService.getAvailableProducts(pagination));
     }
 
 }
