@@ -27,6 +27,7 @@ public class TokenService {
                     .withIssuer("udea")
                     .withSubject(user.getUsername())
                     .withClaim("id",user.getIdUser())
+                    .withClaim("role", user.getRole().name())
                     .withExpiresAt(makeDateExpired())
                     .sign(algorithm);
         } catch (JWTCreationException exception){
