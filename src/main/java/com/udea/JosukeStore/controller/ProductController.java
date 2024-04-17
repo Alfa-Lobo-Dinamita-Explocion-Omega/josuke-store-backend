@@ -61,6 +61,7 @@ public class ProductController {
 
     
     @GetMapping("/products")
+    @CrossOrigin("*")
     public ResponseEntity<List<ProductData>> getProductsByTerm(@RequestParam("term") String term) {
         return ResponseEntity.ok().body(this.productService.getProductsByTerm(term));
     }
