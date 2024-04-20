@@ -1,7 +1,7 @@
-package com.udea.josukestore.dominio.product.validations;
+package com.udea.JosukeStore.dominio.product.validations;
 
-import com.udea.josukestore.dominio.product.dto.ProductRegistrationData;
-import com.udea.josukestore.dominio.product.dto.ProductUpdateData;
+import com.udea.JosukeStore.dominio.product.dto.ProductRegistrationData;
+import com.udea.JosukeStore.dominio.product.dto.ProductUpdateData;
 
 public interface ProductValidator {
 

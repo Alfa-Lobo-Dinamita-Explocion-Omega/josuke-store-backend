@@ -1,4 +1,4 @@
-package com.udea.josukestore.infra.exceptions;
+package com.udea.JosukeStore.infra.exceptions;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;

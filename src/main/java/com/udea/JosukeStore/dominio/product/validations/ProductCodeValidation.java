@@ -1,12 +1,12 @@
-package com.udea.josukestore.dominio.product.validations;
+package com.udea.JosukeStore.dominio.product.validations;
 
 import org.springframework.stereotype.Component;
 
-import com.udea.josukestore.dominio.product.ProductRepository;
-import com.udea.josukestore.dominio.product.dto.ProductRegistrationData;
-import com.udea.josukestore.dominio.product.dto.ProductUpdateData;
-import com.udea.josukestore.dominio.product.model.Product;
-import com.udea.josukestore.infra.exceptions.CustomValidationException;
+import com.udea.JosukeStore.dominio.product.ProductRepository;
+import com.udea.JosukeStore.dominio.product.dto.ProductRegistrationData;
+import com.udea.JosukeStore.dominio.product.dto.ProductUpdateData;
+import com.udea.JosukeStore.dominio.product.model.Product;
+import com.udea.JosukeStore.infra.exceptions.CustomValidationException;
 
 @Component
 public class ProductCodeValidation implements ProductValidator {

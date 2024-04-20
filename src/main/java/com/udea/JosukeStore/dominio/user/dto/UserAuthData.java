@@ -1,4 +1,4 @@
-package com.udea.josukestore.dominio.user.dto;
+package com.udea.JosukeStore.dominio.user.dto;
 
 public record UserAuthData(
         String userName,

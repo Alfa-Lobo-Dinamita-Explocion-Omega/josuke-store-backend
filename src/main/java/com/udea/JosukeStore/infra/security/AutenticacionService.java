@@ -1,4 +1,4 @@
-package com.udea.josukestore.infra.security;
+package com.udea.JosukeStore.infra.security;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.udea.josukestore.dominio.user.UserRepository;
+import com.udea.JosukeStore.dominio.user.UserRepository;
 
 @Service
 public class AutenticacionService implements UserDetailsService {

@@ -1,4 +1,4 @@
-package com.udea.josukestore.infra.exceptions;
+package com.udea.JosukeStore.infra.exceptions;
 import lombok.Getter;
 
 import java.util.List;

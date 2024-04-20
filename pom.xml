@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.udea</groupId>
-	<artifactId>josukestore</artifactId>
+	<artifactId>JosukeStore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>josukestore</name>
+	<name>JosukeStore</name>
 	<description>store</description>
 	<properties>
 		<java.version>17</java.version>

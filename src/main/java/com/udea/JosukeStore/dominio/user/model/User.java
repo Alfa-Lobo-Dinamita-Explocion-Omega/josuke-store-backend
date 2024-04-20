@@ -1,4 +1,4 @@
-package com.udea.josukestore.dominio.user.model;
+package com.udea.JosukeStore.dominio.user.model;
 
 
 import jakarta.persistence.*;
@@ -9,8 +9,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.udea.josukestore.dominio.user.dto.EmployeRegistrationData;
-import com.udea.josukestore.dominio.user.dto.UserResgistrationData;
+import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
+import com.udea.JosukeStore.dominio.user.dto.UserResgistrationData;
 
 import java.util.Collection;
 

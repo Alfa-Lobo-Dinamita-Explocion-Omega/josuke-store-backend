@@ -1,11 +1,11 @@
-package com.udea.josukestore.dominio.user.validations;
+package com.udea.JosukeStore.dominio.user.validations;
 
 import org.springframework.stereotype.Component;
 
-import com.udea.josukestore.dominio.user.UserRepository;
-import com.udea.josukestore.dominio.user.dto.EmployeRegistrationData;
-import com.udea.josukestore.dominio.user.dto.UserResgistrationData;
-import com.udea.josukestore.infra.exceptions.CustomValidationException;
+import com.udea.JosukeStore.dominio.user.UserRepository;
+import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
+import com.udea.JosukeStore.dominio.user.dto.UserResgistrationData;
+import com.udea.JosukeStore.infra.exceptions.CustomValidationException;
 
 @Component
 public class UserUserNameValidation implements UserValidator {

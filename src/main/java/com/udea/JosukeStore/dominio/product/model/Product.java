@@ -1,4 +1,4 @@
-package com.udea.josukestore.dominio.product.model;
+package com.udea.JosukeStore.dominio.product.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

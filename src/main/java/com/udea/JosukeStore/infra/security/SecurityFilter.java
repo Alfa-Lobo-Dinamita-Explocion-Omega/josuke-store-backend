@@ -1,4 +1,4 @@
-package com.udea.josukestore.infra.security;
+package com.udea.JosukeStore.infra.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -10,7 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.udea.josukestore.dominio.user.UserRepository;
+import com.udea.JosukeStore.dominio.user.UserRepository;
 
 import java.io.IOException;
 

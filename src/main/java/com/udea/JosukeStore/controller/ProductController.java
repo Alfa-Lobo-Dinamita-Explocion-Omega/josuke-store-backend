@@ -1,10 +1,10 @@
-package com.udea.josukestore.controller;
+package com.udea.JosukeStore.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.udea.josukestore.dominio.product.dto.*;
-import com.udea.josukestore.dominio.product.interfaces.ProductService;
+import com.udea.JosukeStore.dominio.product.dto.*;
+import com.udea.JosukeStore.dominio.product.interfaces.ProductService;
 
 import jakarta.validation.Valid;
 

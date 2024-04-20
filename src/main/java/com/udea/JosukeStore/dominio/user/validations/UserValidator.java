@@ -1,7 +1,7 @@
-package com.udea.josukestore.dominio.user.validations;
+package com.udea.JosukeStore.dominio.user.validations;
 
-import com.udea.josukestore.dominio.user.dto.EmployeRegistrationData;
-import com.udea.josukestore.dominio.user.dto.UserResgistrationData;
+import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
+import com.udea.JosukeStore.dominio.user.dto.UserResgistrationData;
 
 public interface UserValidator {
 

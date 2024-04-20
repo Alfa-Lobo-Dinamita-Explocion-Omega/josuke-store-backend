@@ -1,13 +1,13 @@
-package com.udea.josukestore.controller;
+package com.udea.JosukeStore.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.udea.josukestore.dominio.user.dto.EmployeRegistrationData;
-import com.udea.josukestore.dominio.user.dto.UserData;
-import com.udea.josukestore.dominio.user.interfaces.EmployeService;
-import com.udea.josukestore.dominio.user.interfaces.UserService;
+import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
+import com.udea.JosukeStore.dominio.user.dto.UserData;
+import com.udea.JosukeStore.dominio.user.interfaces.EmployeService;
+import com.udea.JosukeStore.dominio.user.interfaces.UserService;
 
 
 @RestController

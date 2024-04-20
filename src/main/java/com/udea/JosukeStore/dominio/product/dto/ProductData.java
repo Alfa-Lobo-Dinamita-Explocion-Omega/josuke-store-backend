@@ -1,6 +1,6 @@
-package com.udea.josukestore.dominio.product.dto;
+package com.udea.JosukeStore.dominio.product.dto;
 
-import com.udea.josukestore.dominio.product.model.Product;
+import com.udea.JosukeStore.dominio.product.model.Product;
 
 
 public record ProductData(
