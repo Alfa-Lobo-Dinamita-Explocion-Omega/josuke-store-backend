@@ -1,4 +1,4 @@
-package com.udea.JosukeStore;
+package com.udea.josukestore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
