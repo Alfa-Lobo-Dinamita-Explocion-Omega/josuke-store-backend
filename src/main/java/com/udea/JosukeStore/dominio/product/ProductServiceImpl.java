@@ -1,13 +1,4 @@
-package com.udea.JosukeStore.dominio.product;
-
-import com.udea.JosukeStore.dominio.product.dto.ProductData;
-import com.udea.JosukeStore.dominio.product.dto.ProductRegistrationData;
-import com.udea.JosukeStore.dominio.product.dto.ProductUpdateData;
-import com.udea.JosukeStore.dominio.product.interfaces.ProductService;
-import com.udea.JosukeStore.dominio.product.model.Product;
-import com.udea.JosukeStore.dominio.product.validations.*;
-import com.udea.JosukeStore.infra.exceptions.CustomValidationException;
-import com.udea.JosukeStore.infra.exceptions.DataIntegrityValidationException;
+package com.udea.josukestore.dominio.product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +7,15 @@ import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import com.udea.josukestore.dominio.product.dto.ProductData;
+import com.udea.josukestore.dominio.product.dto.ProductRegistrationData;
+import com.udea.josukestore.dominio.product.dto.ProductUpdateData;
+import com.udea.josukestore.dominio.product.interfaces.ProductService;
+import com.udea.josukestore.dominio.product.model.Product;
+import com.udea.josukestore.dominio.product.validations.*;
+import com.udea.josukestore.infra.exceptions.CustomValidationException;
+import com.udea.josukestore.infra.exceptions.DataIntegrityValidationException;
 
 @Service
 public class ProductServiceImpl implements ProductService {

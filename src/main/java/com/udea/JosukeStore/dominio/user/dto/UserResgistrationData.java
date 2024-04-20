@@ -1,6 +1,6 @@
-package com.udea.JosukeStore.dominio.user.dto;
+package com.udea.josukestore.dominio.user.dto;
 
-import com.udea.JosukeStore.dominio.user.model.Role;
+import com.udea.josukestore.dominio.user.model.Role;
 
 public record UserResgistrationData(
         String name,

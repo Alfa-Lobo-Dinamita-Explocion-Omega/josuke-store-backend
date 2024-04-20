@@ -1,16 +1,17 @@
-package com.udea.JosukeStore.dominio.user;
+package com.udea.josukestore.dominio.user;
 
-import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
-import com.udea.JosukeStore.dominio.user.dto.UserData;
-import com.udea.JosukeStore.dominio.user.dto.UserResgistrationData;
-import com.udea.JosukeStore.dominio.user.interfaces.EmployeService;
-import com.udea.JosukeStore.dominio.user.interfaces.UserService;
-import com.udea.JosukeStore.dominio.user.model.User;
-import com.udea.JosukeStore.dominio.user.validations.UserValidator;
-import com.udea.JosukeStore.infra.exceptions.CustomValidationException;
-import com.udea.JosukeStore.infra.exceptions.DataIntegrityValidationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.udea.josukestore.dominio.user.dto.EmployeRegistrationData;
+import com.udea.josukestore.dominio.user.dto.UserData;
+import com.udea.josukestore.dominio.user.dto.UserResgistrationData;
+import com.udea.josukestore.dominio.user.interfaces.EmployeService;
+import com.udea.josukestore.dominio.user.interfaces.UserService;
+import com.udea.josukestore.dominio.user.model.User;
+import com.udea.josukestore.dominio.user.validations.UserValidator;
+import com.udea.josukestore.infra.exceptions.CustomValidationException;
+import com.udea.josukestore.infra.exceptions.DataIntegrityValidationException;
 
 import java.util.ArrayList;
 import java.util.List;

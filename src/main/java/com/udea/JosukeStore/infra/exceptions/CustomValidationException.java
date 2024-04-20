@@ -1,4 +1,4 @@
-package com.udea.JosukeStore.infra.exceptions;
+package com.udea.josukestore.infra.exceptions;
 
 import jakarta.validation.ValidationException;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.udea.JosukeStore.dominio.user.model;
+package com.udea.josukestore.dominio.user.model;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

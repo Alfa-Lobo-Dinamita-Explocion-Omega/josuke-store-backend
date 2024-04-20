@@ -1,4 +1,4 @@
-package com.udea.JosukeStore.infra.security;
+package com.udea.josukestore.infra.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,8 +15,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import static com.udea.JosukeStore.dominio.user.model.Permission.*;
-import static com.udea.JosukeStore.dominio.user.model.Role.*;
+import static com.udea.josukestore.dominio.user.model.Permission.*;
+import static com.udea.josukestore.dominio.user.model.Role.*;
 import static org.springframework.http.HttpMethod.*;
 
 @Configuration

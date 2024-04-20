@@ -1,4 +1,4 @@
-package com.udea.JosukeStore.dominio.product;
+package com.udea.josukestore.dominio.product;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.udea.JosukeStore.dominio.product.dto.ProductData;
-import com.udea.JosukeStore.dominio.product.model.Product;
+import com.udea.josukestore.dominio.product.dto.ProductData;
+import com.udea.josukestore.dominio.product.model.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {

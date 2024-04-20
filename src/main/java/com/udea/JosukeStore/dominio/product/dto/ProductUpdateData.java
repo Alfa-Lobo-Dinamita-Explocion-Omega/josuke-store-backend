@@ -1,4 +1,4 @@
-package com.udea.JosukeStore.dominio.product.dto;
+package com.udea.josukestore.dominio.product.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

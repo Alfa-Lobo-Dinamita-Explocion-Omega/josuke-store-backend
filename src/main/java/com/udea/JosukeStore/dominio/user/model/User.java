@@ -1,8 +1,6 @@
-package com.udea.JosukeStore.dominio.user.model;
+package com.udea.josukestore.dominio.user.model;
 
 
-import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
-import com.udea.JosukeStore.dominio.user.dto.UserResgistrationData;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -10,6 +8,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.udea.josukestore.dominio.user.dto.EmployeRegistrationData;
+import com.udea.josukestore.dominio.user.dto.UserResgistrationData;
 
 import java.util.Collection;
 

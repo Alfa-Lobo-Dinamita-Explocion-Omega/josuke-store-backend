@@ -1,4 +1,4 @@
-package com.udea.JosukeStore;
+package com.udea.josukestore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,10 +1,6 @@
-package com.udea.JosukeStore.controller;
+package com.udea.josukestore.controller;
 
 
-import com.udea.JosukeStore.dominio.user.dto.UserAuthData;
-import com.udea.JosukeStore.dominio.user.model.User;
-import com.udea.JosukeStore.infra.security.DatosJWttoken;
-import com.udea.JosukeStore.infra.security.TokenService;
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +9,11 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+
+import com.udea.josukestore.dominio.user.dto.UserAuthData;
+import com.udea.josukestore.dominio.user.model.User;
+import com.udea.josukestore.infra.security.DatosJWttoken;
+import com.udea.josukestore.infra.security.TokenService;
 
 @RestController
 @RequestMapping("/auth/login")

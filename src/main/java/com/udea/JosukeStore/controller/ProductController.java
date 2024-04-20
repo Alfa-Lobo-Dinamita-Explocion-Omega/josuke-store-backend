@@ -1,11 +1,10 @@
-package com.udea.JosukeStore.controller;
+package com.udea.josukestore.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.udea.JosukeStore.dominio.product.dto.*;
-import com.udea.JosukeStore.dominio.product.interfaces.ProductService;
+import com.udea.josukestore.dominio.product.dto.*;
+import com.udea.josukestore.dominio.product.interfaces.ProductService;
 
 import jakarta.validation.Valid;
 
@@ -59,7 +58,6 @@ public class ProductController {
         return ResponseEntity.ok().body(this.productService.getProducts());
     }
 
-    
     @GetMapping("/products")
     @CrossOrigin("*")
     public ResponseEntity<List<ProductData>> getProductsByTerm(@RequestParam("term") String term) {
