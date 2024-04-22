@@ -20,11 +20,13 @@ import com.udea.JosukeStore.infra.security.TokenService;
 @CrossOrigin
 public class AuthController {
 
-    @Autowired
     private AuthenticationManager authenticationManager;
-
-    @Autowired
     private TokenService tokenService;
+
+    public AuthController(AuthenticationManager authenticationManager, TokenService tokenService) {
+        this.authenticationManager = authenticationManager;
+        this.tokenService = tokenService;
+    }
 
     @PostMapping
     public ResponseEntity<DatosJWttoken> autenticarUsuario(@RequestBody @Valid UserAuthData userAuthData ){

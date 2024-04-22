@@ -9,6 +9,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import com.udea.JosukeStore.dominio.user.model.User;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -18,8 +19,9 @@ import java.time.ZoneOffset;
 @Service
 public class TokenService {
 
-    @Value("{api.security.secret}")
-    private String apiSecret;
+    private Environment environment;
+
+    private String apiSecret = environment.getProperty("{api.security.secret}");
 
     public String makeToken(User user){
         try {

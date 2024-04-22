@@ -23,8 +23,11 @@ import static org.springframework.http.HttpMethod.*;
 @EnableWebSecurity
 public class SecurityConfiguration {
 
-    @Autowired
     private SecurityFilter securityFilter;
+
+    public SecurityConfiguration(SecurityFilter securityFilter) {
+        this.securityFilter = securityFilter;
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {

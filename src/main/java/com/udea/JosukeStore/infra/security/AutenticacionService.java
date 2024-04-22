@@ -11,8 +11,12 @@ import com.udea.JosukeStore.dominio.user.UserRepository;
 @Service
 public class AutenticacionService implements UserDetailsService {
 
-    @Autowired
     private UserRepository userRepository;
+
+    public AutenticacionService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         return userRepository.findByUserName(userName);
