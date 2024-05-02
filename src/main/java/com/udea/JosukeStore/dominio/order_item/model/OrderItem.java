@@ -1,7 +1,7 @@
 package com.udea.JosukeStore.dominio.order_item.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.udea.JosukeStore.dominio.order.model.Order;
-import com.udea.JosukeStore.dominio.product.dto.ProductData;
 import com.udea.JosukeStore.dominio.product.model.Product;
 
 import jakarta.persistence.Column;
@@ -26,11 +26,13 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(referencedColumnName = "id", name = "order_id")
     private Order order;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(referencedColumnName = "id", name = "product_id")
     private Product product;
 

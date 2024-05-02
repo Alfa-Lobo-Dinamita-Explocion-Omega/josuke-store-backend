@@ -1,6 +1,7 @@
 package com.udea.JosukeStore.controller;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,6 +15,8 @@ import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 
 @RestController
@@ -29,10 +32,16 @@ public class OrderController {
 
 
     @PostMapping
-    public ResponseEntity<OrderData>  registerOrder(@RequestBody @Valid OrderRegistrationData orderRegistrationData){
-        OrderData orderData = this.orderService.registerOrder(orderRegistrationData);
-        return ResponseEntity.ok().body(orderData);
+    public ResponseEntity<BasicOrderData>  registerOrder(@RequestBody @Valid OrderRegistrationData orderRegistrationData){
+        BasicOrderData basicOrderData = this.orderService.registerOrder(orderRegistrationData);
+        return ResponseEntity.ok().body(basicOrderData); 
     }
+
+    @GetMapping()
+    public ResponseEntity<List<OrderData>> getOrdersForToday(){
+        return ResponseEntity.ok().body(this.orderService.getOrdersForToday());
+    }
+    
     
 
 

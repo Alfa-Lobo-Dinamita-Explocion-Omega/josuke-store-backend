@@ -56,9 +56,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductData getProductById(Long id) {
         Optional<Product> product = this.productRepository.findById(id);
-        if (product.isPresent()){
+        if (product.isPresent()) {
             return new ProductData(product.get());
-        }else {
+        } else {
             throw new CustomValidationException("id",
                     "product with id (" + id + ") does not exist!");
         }
@@ -100,10 +100,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductData> getProducts() {
-      return this.productRepository.findAll().stream().map(ProductData::new).toList();
+        return this.productRepository.findAll().stream().map(ProductData::new).toList();
     }
 
-    
     @Override
     public List<ProductData> getProductsByTerm(String term) {
         return this.productRepository.searchProductsByTerm(term).stream().map(ProductData::new).toList();
@@ -111,15 +110,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Page<ProductData> getAvailableProducts(Pageable pagination) {
-        return this.productRepository.findByIsAvailableTrue(pagination);    
+        return this.productRepository.findByIsAvailableTrue(pagination);
     }
 
     @Override
     public Product getProduct(Long id) {
         return this.productRepository.getReferenceById(id);
     }
-
-
-
 
 }

@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.udea.JosukeStore.dominio.user.dto.BasicUserData;
 import com.udea.JosukeStore.dominio.user.dto.UserData;
 import com.udea.JosukeStore.dominio.user.dto.UserResgistrationData;
 import com.udea.JosukeStore.dominio.user.interfaces.UserService;
@@ -45,6 +46,11 @@ public class UserServiceImpl implements UserService {
         User user = User.createUser(userResgistrationData, passwordEncoder);
         user = this.userRepository.save(user);
         return new UserData(user);
+    }
+
+    @Override
+    public BasicUserData getUserData(Long id) {
+        return new BasicUserData(this.userRepository.getReferenceById(id));
     }
 
 

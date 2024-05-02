@@ -40,6 +40,8 @@ public class Order {
         this.totalCost = 0L;
     }
 
+    public Order(){}
+
     public void setStatus(OrderStatus status) {
         this.status = status;
     }

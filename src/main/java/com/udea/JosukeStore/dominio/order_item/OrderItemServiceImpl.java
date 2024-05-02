@@ -1,5 +1,7 @@
 package com.udea.JosukeStore.dominio.order_item;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.udea.JosukeStore.dominio.order.model.Order;
@@ -29,5 +31,10 @@ public class OrderItemServiceImpl implements OrderItemService {
         orderItem = this.orderItemRepository.save(orderItem);
 
         return orderItem.getTotalCost();
+    }
+
+    @Override
+    public List<OrderItem> getOrderItems(Long id) {
+        return this.orderItemRepository.findByOrder_Id(id);
     }
 }
