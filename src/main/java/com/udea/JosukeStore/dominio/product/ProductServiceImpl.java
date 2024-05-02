@@ -114,6 +114,11 @@ public class ProductServiceImpl implements ProductService {
         return this.productRepository.findByIsAvailableTrue(pagination);    
     }
 
+    @Override
+    public Product getProduct(Long id) {
+        return this.productRepository.getReferenceById(id);
+    }
+
 
 
 

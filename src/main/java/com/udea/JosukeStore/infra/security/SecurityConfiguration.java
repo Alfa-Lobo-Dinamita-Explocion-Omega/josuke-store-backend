@@ -43,6 +43,7 @@ public class SecurityConfiguration {
                     rQ.requestMatchers("/users/**").permitAll();
                     rQ.requestMatchers("/auth/**").permitAll();
                     rQ.requestMatchers("/employe/**").permitAll();
+                    rQ.requestMatchers("/order").permitAll();
                     rQ.anyRequest().authenticated();
                 })
                 .cors(Customizer.withDefaults())

@@ -1,41 +1,52 @@
 package com.udea.JosukeStore.dominio.order.model;
 
-
-import com.udea.JosukeStore.dominio.product.model.Product;
-import com.udea.JosukeStore.dominio.user.model.User;
-import jakarta.persistence.*;
-import lombok.AccessLevel;
+import java.time.LocalDate;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @Entity
 @Table(name = "orders")
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @Column(nullable = false)
-    private State state;
+    @Column(nullable = false, name = "customer_id")
+    private Long customerId;
 
-    @Column(nullable = false)
-    private User client;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, name = "order_status")
+    private OrderStatus status;
 
-    @Column(nullable = false)
-    private List<Product> products;
+    @Column(nullable = false, name = "total_cost")
+    private long totalCost;
 
-    @Column(nullable = false)
-    private Double price;
+    @Column(nullable = false, name = "order_date")
+    private LocalDate orderDate;
 
-    public Order(State state, User client, List<Product> products, Double price) {
-        this.state = state;
-        this.client = client;
-        this.products = products;
-        this.price = price;
+    public Order(Long customerId, OrderStatus status) {
+        this.customerId = customerId;
+        this.status = status;
+        this.orderDate = LocalDate.now();
+        this.totalCost = 0L;
     }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
+    public void setTotalCost(Long totalCost){
+        this.totalCost = totalCost;
+    }
+
+
 }

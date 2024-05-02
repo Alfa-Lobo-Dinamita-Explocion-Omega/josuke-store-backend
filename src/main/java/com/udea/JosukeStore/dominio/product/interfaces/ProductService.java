@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import com.udea.JosukeStore.dominio.product.dto.ProductData;
 import com.udea.JosukeStore.dominio.product.dto.ProductRegistrationData;
 import com.udea.JosukeStore.dominio.product.dto.ProductUpdateData;
+import com.udea.JosukeStore.dominio.product.model.Product;
 
 public interface ProductService {
 
@@ -23,6 +24,7 @@ public interface ProductService {
 
     Page<ProductData> getAvailableProducts(Pageable pagination);
 
+    Product getProduct(Long id);
     
 
 

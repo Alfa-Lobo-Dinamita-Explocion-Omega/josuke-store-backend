@@ -1,27 +1,24 @@
 package com.udea.JosukeStore.dominio.order.dto;
 
+import java.time.LocalDate;
 
 import com.udea.JosukeStore.dominio.order.model.Order;
-import com.udea.JosukeStore.dominio.order.model.State;
-import com.udea.JosukeStore.dominio.product.model.Product;
-import com.udea.JosukeStore.dominio.user.model.User;
-
-import java.util.List;
+import com.udea.JosukeStore.dominio.order.model.OrderStatus;
 
 public record OrderData(
-        int id,
-        State state,
-        User clientName,
-        List<Product> products,
-        Double price
+    Long id,
+    Long customerId,
+    OrderStatus status,
+    Long totalCost,
+    LocalDate orderDate
 ) {
-    public OrderData(Order order) {
+    public OrderData(Order order){
         this(
-                order.getId(),
-                order.getState(),
-                order.getClient(),
-                order.getProducts(),
-                order.getPrice()
+            order.getId(),
+            order.getCustomerId(),
+            order.getStatus(),
+            order.getTotalCost(),
+            order.getOrderDate()
         );
     }
 }

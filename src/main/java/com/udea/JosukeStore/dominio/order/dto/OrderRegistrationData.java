@@ -1,13 +1,17 @@
 package com.udea.JosukeStore.dominio.order.dto;
 
-import com.udea.JosukeStore.dominio.product.dto.ProductData;
+
 
 import java.util.List;
 
+import com.udea.JosukeStore.dominio.order.model.OrderStatus;
+import com.udea.JosukeStore.dominio.order_item.dto.OrderItemRegistrationData;
+
 public record OrderRegistrationData(
-        String state,
-        String clientName,
-        List<ProductData> products,
-        Double price
-) {
+    Long customerId,
+    OrderStatus status,
+    List<OrderItemRegistrationData> items
+)
+{
+
 }
