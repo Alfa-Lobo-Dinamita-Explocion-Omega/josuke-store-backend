@@ -5,6 +5,7 @@ import com.udea.JosukeStore.dominio.order.dto.OrderData;
 import com.udea.JosukeStore.dominio.order.dto.OrderRegistrationData;
 import com.udea.JosukeStore.dominio.order.interfaces.OrderService;
 import com.udea.JosukeStore.dominio.order.model.Order;
+import com.udea.JosukeStore.dominio.order_item.dto.BasicOrderItemData;
 import com.udea.JosukeStore.dominio.order_item.dto.OrderItemRegistrationData;
 import com.udea.JosukeStore.dominio.order_item.interfaces.OrderItemService;
 import com.udea.JosukeStore.dominio.order_item.model.OrderItem;
@@ -55,7 +56,7 @@ public class OrderServiceImpl implements OrderService {
         List<OrderData> ordersData = new ArrayList<>(); 
         for (Order order : orders) {
             BasicUserData customer = this.userService.getUserData(order.getCustomerId());
-            List<OrderItem> orderItems = this.orderItemService.getOrderItems(order.getId());
+            List<BasicOrderItemData> orderItems = this.orderItemService.getBasicOrderItemsData(order.getId());
             ordersData.add(new OrderData(order, customer, orderItems));
         }
         

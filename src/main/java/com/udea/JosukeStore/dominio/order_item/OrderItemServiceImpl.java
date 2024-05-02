@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.udea.JosukeStore.dominio.order.model.Order;
+import com.udea.JosukeStore.dominio.order_item.dto.BasicOrderItemData;
 import com.udea.JosukeStore.dominio.order_item.dto.OrderItemRegistrationData;
 import com.udea.JosukeStore.dominio.order_item.interfaces.OrderItemService;
 import com.udea.JosukeStore.dominio.order_item.model.OrderItem;
@@ -36,5 +37,9 @@ public class OrderItemServiceImpl implements OrderItemService {
     @Override
     public List<OrderItem> getOrderItems(Long id) {
         return this.orderItemRepository.findByOrder_Id(id);
+    }
+
+    public List<BasicOrderItemData> getBasicOrderItemsData(Long id){
+        return this.orderItemRepository.findByOrder_Id(id).stream().map(BasicOrderItemData::new).toList();
     }
 }

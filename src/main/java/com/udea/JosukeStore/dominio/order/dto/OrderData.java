@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.udea.JosukeStore.dominio.order.model.Order;
 import com.udea.JosukeStore.dominio.order.model.OrderStatus;
-import com.udea.JosukeStore.dominio.order_item.model.OrderItem;
+import com.udea.JosukeStore.dominio.order_item.dto.BasicOrderItemData;
 import com.udea.JosukeStore.dominio.user.dto.BasicUserData;
 
 public record OrderData(
@@ -14,8 +14,8 @@ public record OrderData(
         Long totalCost,
         LocalDate orderDate,
         BasicUserData customer,
-        List<OrderItem> orderItems) {
-    public OrderData(Order order, BasicUserData customer, List<OrderItem> orderItems) {
+        List<BasicOrderItemData> orderItems) {
+    public OrderData(Order order, BasicUserData customer, List<BasicOrderItemData> orderItems) {
         this(order.getId(),
                 order.getStatus(),
                 order.getTotalCost(),
