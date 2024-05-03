@@ -17,7 +17,7 @@ import com.udea.JosukeStore.infra.security.TokenService;
 
 @RestController
 @RequestMapping("/auth/login")
-@CrossOrigin
+@CrossOrigin("*")
 public class AuthController {
 
     private AuthenticationManager authenticationManager;
