@@ -9,11 +9,8 @@ import com.udea.JosukeStore.dominio.order.model.OrderStatus;
 import com.udea.JosukeStore.dominio.order_item.dto.BasicOrderItemData;
 import com.udea.JosukeStore.dominio.order_item.dto.OrderItemRegistrationData;
 import com.udea.JosukeStore.dominio.order_item.interfaces.OrderItemService;
-import com.udea.JosukeStore.dominio.order_item.model.OrderItem;
 import com.udea.JosukeStore.dominio.user.dto.BasicUserData;
-import com.udea.JosukeStore.dominio.user.dto.UserData;
 import com.udea.JosukeStore.dominio.user.interfaces.UserService;
-import com.udea.JosukeStore.dominio.user.model.User;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

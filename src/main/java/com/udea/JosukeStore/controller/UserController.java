@@ -11,7 +11,6 @@ import com.udea.JosukeStore.dominio.user.interfaces.UserService;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin("*")
 public class UserController {
 
     private UserService userService;

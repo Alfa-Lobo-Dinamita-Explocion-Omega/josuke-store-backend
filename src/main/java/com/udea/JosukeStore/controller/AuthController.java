@@ -3,7 +3,6 @@ package com.udea.JosukeStore.controller;
 
 import jakarta.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,7 +16,6 @@ import com.udea.JosukeStore.infra.security.TokenService;
 
 @RestController
 @RequestMapping("/auth/login")
-@CrossOrigin("*")
 public class AuthController {
 
     private AuthenticationManager authenticationManager;

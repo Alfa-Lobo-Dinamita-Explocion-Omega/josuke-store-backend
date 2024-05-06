@@ -7,12 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
 import com.udea.JosukeStore.dominio.user.dto.UserData;
 import com.udea.JosukeStore.dominio.user.interfaces.EmployeService;
-import com.udea.JosukeStore.dominio.user.interfaces.UserService;
-
 
 @RestController
 @RequestMapping("/employe")
-@CrossOrigin("*")
 public class EmployeController {
 
 

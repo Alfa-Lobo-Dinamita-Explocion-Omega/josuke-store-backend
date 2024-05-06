@@ -1,6 +1,6 @@
 package com.udea.JosukeStore.controller;
 
-import java.net.URI;
+
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.PatchMapping;
 
 @RestController
 @RequestMapping("/order")
-@CrossOrigin("*")
 public class OrderController {
 
     private OrderService orderService;
