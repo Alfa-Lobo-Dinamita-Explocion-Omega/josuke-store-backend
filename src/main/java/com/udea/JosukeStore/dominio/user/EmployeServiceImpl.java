@@ -5,9 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.udea.JosukeStore.dominio.user.dto.EmployeRegistrationData;
 import com.udea.JosukeStore.dominio.user.dto.UserData;
-import com.udea.JosukeStore.dominio.user.dto.UserResgistrationData;
 import com.udea.JosukeStore.dominio.user.interfaces.EmployeService;
-import com.udea.JosukeStore.dominio.user.interfaces.UserService;
 import com.udea.JosukeStore.dominio.user.model.User;
 import com.udea.JosukeStore.dominio.user.validations.UserValidator;
 import com.udea.JosukeStore.infra.exceptions.CustomValidationException;

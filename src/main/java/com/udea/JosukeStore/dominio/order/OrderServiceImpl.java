@@ -5,6 +5,7 @@ import com.udea.JosukeStore.dominio.order.dto.OrderData;
 import com.udea.JosukeStore.dominio.order.dto.OrderRegistrationData;
 import com.udea.JosukeStore.dominio.order.interfaces.OrderService;
 import com.udea.JosukeStore.dominio.order.model.Order;
+import com.udea.JosukeStore.dominio.order.model.OrderStatus;
 import com.udea.JosukeStore.dominio.order_item.dto.BasicOrderItemData;
 import com.udea.JosukeStore.dominio.order_item.dto.OrderItemRegistrationData;
 import com.udea.JosukeStore.dominio.order_item.interfaces.OrderItemService;
@@ -61,6 +62,14 @@ public class OrderServiceImpl implements OrderService {
         }
         
         return ordersData;    
+    }
+
+    @Override
+    public List<OrderData> updateOrderStatus(Long id, OrderStatus status) {
+        Order order = this.orderRepository.getReferenceById(id);
+        order.setStatus(status);
+        this.orderRepository.save(order);
+        return getOrdersForToday();
     }
 
 }
