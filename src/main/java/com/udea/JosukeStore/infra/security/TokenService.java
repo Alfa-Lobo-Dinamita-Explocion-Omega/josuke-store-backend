@@ -26,7 +26,8 @@ public class TokenService {
             return JWT.create()
                     .withIssuer("udea")
                     .withSubject(user.getUsername())
-                    .withClaim("id",user.getIdUser())
+                    .withClaim("id",user.getId())
+                    .withClaim("cedula",user.getIdUser())
                     .withClaim("role", user.getRole().name())
                     .withExpiresAt(makeDateExpired())
                     .sign(algorithm);
